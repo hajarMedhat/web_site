@@ -1,36 +1,194 @@
-* { 
-    padding: 0; 
-    margin: 0; 
-    font-family: sans-serif;
-    color: dimgrey;
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --link-color: dimgrey;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Light mode backgrounds */
+  --insta-bg: #e6d0ff;
+  --facebook-bg: #d0e4ff;
+  --phone-bg: #d0d9ff;
+  --snapchat-bg: #fffde7;
+
+  /* Light mode text on links */
+  --insta-text: #5a2a82;
+  --facebook-text: #0d3a8a;
+  --phone-text: #1c2d7a;
+  --snapchat-text: #bfbf00;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --link-color: #ccc;
+  --card-shadow: rgba(255, 255, 255, 0.1);
+
+  /* Dark mode backgrounds (dark colors) */
+  --insta-bg: #5a2a82;
+  --facebook-bg: #0d3a8a;
+  --phone-bg: #1c2d7a;
+  --snapchat-bg: #bfbf00;
+
+  /* Dark mode text on links (light colors) */
+  --insta-text: #e6d0ff;
+  --facebook-text: #d0e4ff;
+  --phone-text: #d0d9ff;
+  --snapchat-text: #fffde7;
+}
+
+/* Reset and base */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: center;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
+  min-height: 600px;
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: var(--bg-color);
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.dark-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
 img {
-    width: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .info {
-    font-size: 20px;
-    line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-color);
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
 }
 
+.info p {
+  margin-bottom: 25px;
+}
+
+/* Links */
+/* General link style */
 a {
-    text-decoration: none;
-    color: dimgrey;
+  text-decoration: none;
+  color: var(--link-color);
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-weight: 600;
 }
 
+/* Platform specific background and text colors */
+a.insta {
+  background-color: var(--insta-bg);
+  color: var(--insta-text);
+}
+
+a.facebook {
+  background-color: var(--facebook-bg);
+  color: var(--facebook-text);
+}
+
+a.phone {
+  background-color: var(--phone-bg);
+  color: var(--phone-text);
+}
+
+a.snapchat {
+  background-color: var(--snapchat-bg);
+  color: var(--snapchat-text);
+}
+
+/* Hover and focus states */
+a:focus,
 a:hover {
-    color: brown;
+  border: none;
+  transform: scale(1.05);
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+/* Divider & Tagline */
+.divider {
+  margin: 30px auto 10px;
+  width: 60%;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .divider {
+  background-color: #444;
+}
+
+.tagline {
+  font-size: 16px;
+  color: var(--link-color);
+  margin-top: 15px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .tagline {
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  body {
+    margin: 20px;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info {
+    font-size: 16px;
+  }
+}
+
+/* Accessibility */
+a:focus-visible {
+  outline: 2px solid var(--text-color);
 }

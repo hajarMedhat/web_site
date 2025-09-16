@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hajer Medhat - Contact Card</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hajer Medhat - Contact Card</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <img src="Hajer.jpeg" alt="Hajer Medhat">
-    <div class="info">
-        <p><strong>Name:</strong> Hajer Medhat</p>
-        <p><strong>Phone:</strong> <a href="tel:01020999331">My Number</a></p>
-        <p><strong>Instagram:</strong> 
-            <a href="https://www.instagram.com/hajarmedhat4?utm_source=qr&igsh=Z2lkd3I5cmk5dXc1" target="_blank">
-                @hajarmedhat4
-            </a>
-        </p>
-        <p><strong>Facebook:</strong> 
-            <a href="https://www.facebook.com/share/1HEBX9aRDQ/" target="_blank">
-                Hajer Medhat
-            </a>
-        </p>
-        <p><strong>Address:</strong> Cairo, Egypt</p>
-    </div>
+  <button
+    class="dark-toggle"
+    onclick="toggleDarkMode()"
+    aria-pressed="false"
+    aria-label="Toggle dark mode"
+  >
+    🌙 Dark Mode
+  </button>
+
+  <img src="Hajer.jpeg" alt="Portrait of Hajer Medhat" />
+  <section class="info" aria-label="Contact Information">
+    <p><strong>Name:</strong> Hajer Medhat</p>
+
+    <p><strong>Phone:</strong> 📞
+      <a
+        class="phone"
+        href="tel:+201020999331"
+        aria-label="Call Hajer Medhat at 01020999331"
+      >
+        01020999331
+      </a>
+    </p>
+
+    <p><strong>Instagram:</strong> 📷
+      <a
+        class="insta"
+        href="https://www.instagram.com/hajarmedhat4?utm_source=qr&igsh=Z2lkd3I5cmk5dXc1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Hajer Medhat's Instagram profile"
+      >
+        @hajarmedhat4
+      </a>
+    </p>
+
+    <p><strong>Facebook:</strong> 📘
+      <a
+        class="facebook"
+        href="https://www.facebook.com/share/1HEBX9aRDQ/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Hajer Medhat's Facebook profile"
+      >
+        Hajer Medhat
+      </a>
+    </p>
+
+    <p><strong>Snapchat:</strong> 👻
+      <a
+        class="snapchat"
+        href="https://www.snapchat.com/add/hajarmedhatfath?share_id=2-UkHH9Wo3E&locale=en-EG"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Hajer Medhat's Snapchat profile"
+      >
+        @hajarmedhatfath
+      </a>
+    </p>
+
+    <p><strong>Address:</strong> 📍 Cairo, Egypt</p>
+
+    <hr class="divider" />
+    <p class="tagline"><em>Do what you love♥️✨</em></p>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const button = document.querySelector(".dark-toggle");
+      const isDark = body.classList.toggle("dark-mode");
+
+      // Toggle emoji/text
+      button.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+      // Update aria-pressed for accessibility
+      button.setAttribute("aria-pressed", isDark);
+    }
+  </script>
 </body>
 </html>
