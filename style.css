@@ -1,0 +1,36 @@
+* { 
+    padding: 0; 
+    margin: 0; 
+    font-family: sans-serif;
+    color: dimgrey;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.info {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: dimgrey;
+}
+
+a:hover {
+    color: brown;
+}
