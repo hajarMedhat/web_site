@@ -171,20 +171,70 @@ body.dark-mode .tagline {
 }
 
 /* Responsive */
-@media (max-width: 420px) {
+/* Desktop styles: make container wider and center nicely */
+@media (min-width: 768px) {
   body {
-    margin: 20px;
-    max-width: 100%;
-    padding: 20px 15px;
+    max-width: 900px; /* wider container for desktops */
+    padding: 60px 40px; /* more padding on bigger screens */
+    margin: 80px auto; /* more top/bottom margin */
+    font-size: 18px; /* slightly bigger font */
   }
 
   img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
   }
 
   .info {
+    font-size: 20px;
+    padding: 30px;
+  }
+
+  a {
     font-size: 16px;
+    padding: 10px 14px;
+  }
+}
+
+/* Make links full-width blocks on all mobile sizes */
+@media (max-width: 600px) {
+  a {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    text-align: center;
+  }
+}
+
+/* Mini mobile version for very small screens (max 320px) */
+@media (max-width: 320px) {
+  body {
+    margin: 10px;
+    padding: 15px 10px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 50px; /* increased space for toggle button */
+  }
+
+  .info {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .dark-toggle {
+    top: 8px;            /* Move down a bit */
+    right: 8px;          /* Move inside a bit */
+    padding: 4px 8px;    /* Smaller padding */
+    font-size: 10px;     /* Smaller font */
+    border-width: 1.5px; /* Thinner border */
   }
 }
 
